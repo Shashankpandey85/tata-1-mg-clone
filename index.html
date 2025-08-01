@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tata 1mg Clone - Online Pharmacy & Healthcare Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f6f6f6;
+        }
+        .text-brand { color: #ff6f61; }
+        .bg-brand { background-color: #ff6f61; }
+        .border-brand { border-color: #ff6f61; }
+        .nav-link-main {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-weight: 700;
+            color: #212121;
+            transition: color 0.3s;
+        }
+        .nav-link-main:hover {
+            color: #ff6f61;
+        }
+        .safe-tag {
+            background-color: #fdf1e5;
+            color: #f57f20;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #212121;
+            margin-bottom: 16px;
+        }
+        .card-shadow {
+            box-shadow: 0 1px 3px 0 rgba(0,0,0,.08);
+        }
+        .card-shadow:hover {
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,.12);
+        }
+        /* For the loader */
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 4px solid #ff6f61;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        /* Styling for AI response */
+        #ai-response-content h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #333;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        #ai-response-content ul {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        #ai-response-content li {
+            margin-bottom: 0.25rem;
+        }
+        #ai-response-content p {
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <!-- Top Header -->
+            <div class="flex justify-between items-center py-3 border-b border-gray-200">
+                <div class="flex items-center space-x-8">
+                    <img src="http://googleusercontent.com/file_content/1" alt="1mg Logo" class="h-10">
+                    <div class="hidden lg:flex items-center space-x-6 text-sm">
+                        <a href="#" class="nav-link-main">MEDICINES</a>
+                        <a href="#" class="nav-link-main">LAB TESTS <span class="safe-tag">SAFE</span></a>
+                        <a href="#" class="nav-link-main">CONSULT DOCTORS</a>
+                        <a href="#" class="nav-link-main">CANCER CARE</a>
+                        <a href="#" class="nav-link-main">AYURVEDA</a>
+                        <a href="#" class="nav-link-main">CARE PLAN</a>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-5 text-sm">
+                    <a href="#" id="loginBtn" class="font-bold hover:text-brand">Login | Sign Up</a>
+                    <a href="#" class="font-bold hover:text-brand">Offers</a>
+                    <a href="#" class="relative">
+                        <i class="fas fa-shopping-cart text-xl hover:text-brand"></i>
+                    </a>
+                    <a href="#" class="hover:text-brand">Need Help?</a>
+                </div>
+            </div>
+            <!-- Bottom Header / Search -->
+            <div class="flex justify-between items-center py-2 gap-4">
+                <div class="flex items-center border rounded-md px-3 py-2 w-full max-w-xs">
+                    <i class="fas fa-map-marker-alt text-gray-400 mr-2"></i>
+                    <input type="text" value="Lucknow" class="w-full focus:outline-none text-sm bg-transparent">
+                    <i class="fas fa-crosshairs text-brand ml-2 cursor-pointer"></i>
+                </div>
+                <div class="flex items-center border rounded-md px-3 py-2 flex-grow">
+                    <i class="fas fa-search text-gray-400 mr-2"></i>
+                    <input type="text" placeholder="Search for medicines, health products & more" class="w-full focus:outline-none text-sm bg-transparent">
+                </div>
+                <div class="hidden md:flex items-center text-sm text-gray-600 whitespace-nowrap">
+                    <p><span class="font-bold text-green-600">QUICK BUY!</span> Get 25% off on medicines*</p>
+                    <button class="ml-4 bg-brand text-white font-bold px-5 py-2 rounded-md hover:bg-red-500 transition-colors">Upload</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 py-6">
+        <!-- Hero Banner -->
+        <div class="bg-white rounded-xl p-2 flex items-center justify-center mb-6">
+            <img src="https://onemg.gumlet.io/image/upload/v1625550215/marketing/2109-vi-1mg-New-Launch-generic-banners-1228x200.png"
+                 onerror="this.onerror=null;this.src='https://placehold.co/1228x200/ff6f61/ffffff?text=Health+Banner';"
+                 alt="Main Banner" class="rounded-lg w-full">
+        </div>
+
+        <h2 class="text-xl font-bold text-gray-700 mb-4 text-center">Tata 1mg: Your trusted health partner</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10 text-center">
+            <div class="flex flex-col items-center">
+                <p class="text-lg font-bold text-gray-800">25 Million+ Users</p>
+                <p class="text-sm text-gray-500">serving happiness</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <p class="text-lg font-bold text-gray-800">260k+ Products</p>
+                <p class="text-sm text-gray-500">and still counting</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <p class="text-lg font-bold text-gray-800">31 Million+ Orders</p>
+                <p class="text-sm text-gray-500">delivered safely</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <p class="text-lg font-bold text-gray-800">800+ Cities</p>
+                <p class="text-sm text-gray-500">in India</p>
+            </div>
+        </div>
+
+        <!-- Gemini AI Health Assistant -->
+        <section class="mb-12">
+            <div class="bg-white rounded-lg p-6 card-shadow">
+                <h3 class="section-title text-center">✨ AI Health Assistant</h3>
+                <p class="text-center text-gray-600 mb-4">Feeling unwell? Describe your symptoms to get AI-powered insights.</p>
+                <div class="max-w-3xl mx-auto">
+                    <textarea id="symptoms-input" class="w-full p-3 border border-gray-300 rounded-md focus:ring-brand focus:border-brand" rows="4" placeholder="For example: I have a sore throat, a mild fever, and a headache..."></textarea>
+                    <button id="analyze-symptoms-btn" class="mt-4 w-full bg-brand text-white font-bold py-3 px-4 rounded-md hover:bg-red-500 transition-colors flex items-center justify-center">
+                        Analyze Symptoms
+                    </button>
+                    <div id="ai-response-area" class="mt-6 p-4 border border-gray-200 rounded-lg bg-gray-50 hidden">
+                        <div id="ai-response-loader" class="flex justify-center items-center">
+                            <div class="loader"></div>
+                        </div>
+                        <div id="ai-response-content"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lab Tests Section -->
+        <section class="mb-12">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="section-title">Lab Tests from the comfort of your home</h3>
+                <a href="#" class="text-brand font-semibold text-sm hover:underline">View All</a>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-8 gap-4 text-center">
+                 <!-- Test Items -->
+                <div class="bg-white p-4 rounded-lg card-shadow transition-shadow cursor-pointer">
+                    <img src="https://onemg.gumlet.io/diagnostics/2023-08/1692799292_Full%20Body%20Checkup.png" onerror="this.onerror=null;this.src='https://placehold.co/80x80/cccccc/333333?text=Icon';" alt="Full Body Checkup" class="mx-auto h-16 w-16 mb-2">
+                    <p class="text-sm font-medium">Full Body Checkup</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg card-shadow transition-shadow cursor-pointer">
+                    <img src="https://onemg.gumlet.io/diagnostics/2023-08/1692799307_Diabetes.png" onerror="this.onerror=null;this.src='https://placehold.co/80x80/cccccc/333333?text=Icon';" alt="Diabetes" class="mx-auto h-16 w-16 mb-2">
+                    <p class="text-sm font-medium">Diabetes</p>
+                </div>
+                 <div class="bg-white p-4 rounded-lg card-shadow transition-shadow cursor-pointer">
+                    <img src="https://onemg.gumlet.io/diagnostics/2023-08/1692799321_Thyroid.png" onerror="this.onerror=null;this.src='https://placehold.co/80x80/cccccc/333333?text=Icon';" alt="Thyroid" class="mx-auto h-16 w-16 mb-2">
+                    <p class="text-sm font-medium">Thyroid</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg card-shadow transition-shadow cursor-pointer">
+                    <img src="https://onemg.gumlet.io/diagnostics/2023-08/1692799335_Women%27s%20Health.png" onerror="this.onerror=null;this.src='https://placehold.co/80x80/cccccc/333333?text=Icon';" alt="Women's Health" class="mx-auto h-16 w-16 mb-2">
+                    <p class="text-sm font-medium">Women's Health</p>
+                </div>
+                 <div class="bg-white p-4 rounded-lg card-shadow transition-shadow cursor-pointer">
+                    <img src="https://onemg.gumlet.io/diagnostics/2023-08/1692799351_Fever.png" onerror="this.onerror=null;this.src='https://placehold.co/80x80/cccccc/333333?text=Icon';" alt="Fever" class="mx-auto h-16 w-16 mb-2">
+                    <p class="text-sm font-medium">Fever</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg card-shadow transition-shadow cursor-pointer">
+                    <img src="https://onemg.gumlet.io/diagnostics/2023-08/1692799365_Heart.png" onerror="this.onerror=null;this.src='https://placehold.co/80x80/cccccc/333333?text=Icon';" alt="Heart" class="mx-auto h-16 w-16 mb-2">
+                    <p class="text-sm font-medium">Heart</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg card-shadow transition-shadow cursor-pointer">
+                    <img src="https://onemg.gumlet.io/diagnostics/2023-08/1692799380_Bone%20Health.png" onerror="this.onerror=null;this.src='https://placehold.co/80x80/cccccc/333333?text=Icon';" alt="Bone Health" class="mx-auto h-16 w-16 mb-2">
+                    <p class="text-sm font-medium">Bone Health</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg card-shadow transition-shadow cursor-pointer">
+                    <img src="https://onemg.gumlet.io/diagnostics/2023-08/1692799393_Risk%20Assessment.png" onerror="this.onerror=null;this.src='https://placehold.co/80x80/cccccc/333333?text=Icon';" alt="Risk Assessment" class="mx-auto h-16 w-16 mb-2">
+                    <p class="text-sm font-medium">Risk Assessment</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Consult Doctors Section -->
+        <section class="mb-12">
+            <div class="bg-white rounded-lg p-6 flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex-1 text-center md:text-left">
+                    <h3 class="text-2xl font-bold text-gray-800">Consult with top doctors online</h3>
+                    <p class="text-gray-600 mt-2">Connect with doctors across 22+ specialties</p>
+                    <button class="mt-4 bg-brand text-white font-bold px-6 py-2 rounded-md hover:bg-red-500 transition-colors">Consult Now</button>
+                </div>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                    <div class="text-center">
+                        <img src="https://onemg.gumlet.io/image/upload/v1629183296/gnpr857x2bdqpxichdcr.png" onerror="this.onerror=null;this.src='https://placehold.co/100x100/f0f0f0/333333?text=Doctor';" alt="Period problems" class="mx-auto h-20 w-20 rounded-full border-2 border-gray-200">
+                        <p class="font-semibold mt-2 text-sm">Period problems?</p>
+                        <p class="text-xs text-gray-500">CONSULT NOW</p>
+                    </div>
+                    <div class="text-center">
+                        <img src="https://onemg.gumlet.io/image/upload/v1629183429/vnsfhy33nlzohr2misog.png" onerror="this.onerror=null;this.src='https://placehold.co/100x100/f0f0f0/333333?text=Doctor';" alt="Acne" class="mx-auto h-20 w-20 rounded-full border-2 border-gray-200">
+                        <p class="font-semibold mt-2 text-sm">Acne, pimple or skin issues?</p>
+                        <p class="text-xs text-gray-500">CONSULT NOW</p>
+                    </div>
+                    <div class="text-center">
+                        <img src="https://onemg.gumlet.io/image/upload/v1629183528/xfulbt0gqsovypr8d0dl.png" onerror="this.onerror=null;this.src='https://placehold.co/100x100/f0f0f0/333333?text=Doctor';" alt="Cold or cough" class="mx-auto h-20 w-20 rounded-full border-2 border-gray-200">
+                        <p class="font-semibold mt-2 text-sm">Cold, cough or fever?</p>
+                        <p class="text-xs text-gray-500">CONSULT NOW</p>
+                    </div>
+                    <div class="text-center">
+                        <img src="https://onemg.gumlet.io/image/upload/v1629183594/j4u27bccjfwimj0g6gnx.png" onerror="this.onerror=null;this.src='https://placehold.co/100x100/f0f0f0/333333?text=Doctor';" alt="Depression" class="mx-auto h-20 w-20 rounded-full border-2 border-gray-200">
+                        <p class="font-semibold mt-2 text-sm">Depression or anxiety?</p>
+                        <p class="text-xs text-gray-500">CONSULT NOW</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shop by Health Concern -->
+        <section class="mb-12">
+            <h3 class="section-title">Shop by health concern</h3>
+            <div class="relative">
+                <div class="flex space-x-4 overflow-x-auto pb-4 hide-scrollbar">
+                    <!-- Concern Cards -->
+                    <div class="flex-shrink-0 w-40 text-center cursor-pointer group">
+                        <div class="bg-white rounded-lg card-shadow transition-shadow p-2">
+                            <img src="https://onemg.gumlet.io/image/upload/w_150,h_150,c_fit,a_auto,q_auto,f_auto/v1624524227/hgzmf22pf2dsmz6pfr3n.png" onerror="this.onerror=null;this.src='https://placehold.co/150x150/f0f0f0/333333?text=Diabetes+Care';" alt="Diabetes Care" class="w-full rounded-md mb-2">
+                            <p class="font-semibold text-sm group-hover:text-brand">Diabetes Care</p>
+                        </div>
+                    </div>
+                    <div class="flex-shrink-0 w-40 text-center cursor-pointer group">
+                        <div class="bg-white rounded-lg card-shadow transition-shadow p-2">
+                           <img src="https://onemg.gumlet.io/image/upload/w_150,h_150,c_fit,a_auto,q_auto,f_auto/v1624524243/j7n63pjb9hlsbkn8wisk.png" onerror="this.onerror=null;this.src='https://placehold.co/150x150/f0f0f0/333333?text=Cardiac+Care';" alt="Cardiac Care" class="w-full rounded-md mb-2">
+                            <p class="font-semibold text-sm group-hover:text-brand">Cardiac Care</p>
+                        </div>
+                    </div>
+                    <div class="flex-shrink-0 w-40 text-center cursor-pointer group">
+                        <div class="bg-white rounded-lg card-shadow transition-shadow p-2">
+                           <img src="https://onemg.gumlet.io/image/upload/w_150,h_150,c_fit,a_auto,q_auto,f_auto/v1624524257/y5b6bdda444mv0hbc7wa.png" onerror="this.onerror=null;this.src='https://placehold.co/150x150/f0f0f0/333333?text=Stomach+Care';" alt="Stomach Care" class="w-full rounded-md mb-2">
+                            <p class="font-semibold text-sm group-hover:text-brand">Stomach Care</p>
+                        </div>
+                    </div>
+                    <div class="flex-shrink-0 w-40 text-center cursor-pointer group">
+                        <div class="bg-white rounded-lg card-shadow transition-shadow p-2">
+                           <img src="https://onemg.gumlet.io/image/upload/w_150,h_150,c_fit,a_auto,q_auto,f_auto/v1624524272/x2sdadwihs8hyt7b0vfg.png" onerror="this.onerror=null;this.src='https://placehold.co/150x150/f0f0f0/333333?text=Liver+Care';" alt="Liver Care" class="w-full rounded-md mb-2">
+                            <p class="font-semibold text-sm group-hover:text-brand">Liver Care</p>
+                        </div>
+                    </div>
+                    <div class="flex-shrink-0 w-40 text-center cursor-pointer group">
+                        <div class="bg-white rounded-lg card-shadow transition-shadow p-2">
+                           <img src="https://onemg.gumlet.io/image/upload/w_150,h_150,c_fit,a_auto,q_auto,f_auto/v1624524286/j8j3s7h9f3s5n9gqdl2r.png" onerror="this.onerror=null;this.src='https://placehold.co/150x150/f0f0f0/333333?text=Bone+Care';" alt="Bone, Joint & Muscle Care" class="w-full rounded-md mb-2">
+                            <p class="font-semibold text-sm group-hover:text-brand">Bone, Joint & Muscle Care</p>
+                        </div>
+                    </div>
+                    <div class="flex-shrink-0 w-40 text-center cursor-pointer group">
+                        <div class="bg-white rounded-lg card-shadow transition-shadow p-2">
+                           <img src="https://onemg.gumlet.io/image/upload/w_150,h_150,c_fit,a_auto,q_auto,f_auto/v1624524301/b58d0a1a1e7473215435.png" onerror="this.onerror=null;this.src='https://placehold.co/150x150/f0f0f0/333333?text=Pain+Relief';" alt="Pain Relief" class="w-full rounded-md mb-2">
+                            <p class="font-semibold text-sm group-hover:text-brand">Pain Relief</p>
+                        </div>
+                    </div>
+                     <div class="flex-shrink-0 w-40 text-center cursor-pointer group">
+                        <div class="bg-white rounded-lg card-shadow transition-shadow p-2">
+                           <img src="https://onemg.gumlet.io/image/upload/w_150,h_150,c_fit,a_auto,q_auto,f_auto/v1624524314/au6xmbmr4kbo62w2wric.png" onerror="this.onerror=null;this.src='https://placehold.co/150x150/f0f0f0/333333?text=Weight+Care';" alt="Weight Management" class="w-full rounded-md mb-2">
+                            <p class="font-semibold text-sm group-hover:text-brand">Weight Management</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Health Articles -->
+        <section class="mb-12">
+            <h3 class="section-title">Health articles from our experts</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Article Cards -->
+                <div class="bg-white rounded-lg card-shadow overflow-hidden transition-shadow group flex flex-col">
+                    <img src="https://onemg.gumlet.io/image/upload/v1609230537/editorial/blog-images/zh2scsziqjysdjv4qgnp.jpg" onerror="this.onerror=null;this.src='https://placehold.co/400x200/f0f0f0/333333?text=Article+Image';" alt="Article 1" class="w-full h-40 object-cover">
+                    <div class="p-4 flex-grow">
+                        <p class="text-xs text-gray-500">HEALTH A-Z</p>
+                        <h4 class="font-semibold text-gray-800 mt-1 group-hover:text-brand cursor-pointer">Coronavirus: All you need to know</h4>
+                        <p class="text-sm text-gray-600 mt-2">Medically reviewed by Dr. Varun Gupta, MD - Paediatrics</p>
+                    </div>
+                    <div class="p-4 pt-0">
+                        <button class="summarize-article-btn text-sm text-brand font-semibold hover:underline">✨ Simplify with AI</button>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg card-shadow overflow-hidden transition-shadow group flex flex-col">
+                    <img src="https://onemg.gumlet.io/image/upload/v1609230623/editorial/blog-images/yqkvv5gld2sivwsfnqcs.jpg" onerror="this.onerror=null;this.src='https://placehold.co/400x200/f0f0f0/333333?text=Article+Image';" alt="Article 2" class="w-full h-40 object-cover">
+                    <div class="p-4 flex-grow">
+                        <p class="text-xs text-gray-500">DIABETES</p>
+                        <h4 class="font-semibold text-gray-800 mt-1 group-hover:text-brand cursor-pointer">Can you reverse diabetes?</h4>
+                        <p class="text-sm text-gray-600 mt-2">Medically reviewed by Dr. Lalit Kanodia, General Physician</p>
+                    </div>
+                     <div class="p-4 pt-0">
+                        <button class="summarize-article-btn text-sm text-brand font-semibold hover:underline">✨ Simplify with AI</button>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg card-shadow overflow-hidden transition-shadow group flex flex-col">
+                    <img src="https://onemg.gumlet.io/image/upload/v1609230656/editorial/blog-images/jwh1ubay1vgnfs8a2aym.jpg" onerror="this.onerror=null;this.src='https://placehold.co/400x200/f0f0f0/333333?text=Article+Image';" alt="Article 3" class="w-full h-40 object-cover">
+                    <div class="p-4 flex-grow">
+                        <p class="text-xs text-gray-500">VITAMINS & SUPPLEMENTS</p>
+                        <h4 class="font-semibold text-gray-800 mt-1 group-hover:text-brand cursor-pointer">Vitamin D: Why is it important?</h4>
+                        <p class="text-sm text-gray-600 mt-2">Medically reviewed by Dr. Nikita Toshi, General Physician</p>
+                    </div>
+                     <div class="p-4 pt-0">
+                        <button class="summarize-article-btn text-sm text-brand font-semibold hover:underline">✨ Simplify with AI</button>
+                    </div>
+                </div>
+            </div>
+             <div class="text-center mt-8">
+                <a href="#" class="text-brand font-semibold border-2 border-brand rounded-md px-8 py-2 hover:bg-brand hover:text-white transition-colors">See all articles</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t pt-10">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-8">
+                <!-- Know Us -->
+                <div>
+                    <h4 class="font-bold text-gray-800 mb-4">Know Us</h4>
+                    <ul class="space-y-3 text-sm text-gray-600">
+                        <li><a href="#" class="hover:text-brand">About Us</a></li>
+                        <li><a href="#" class="hover:text-brand">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-brand">Press Coverage</a></li>
+                        <li><a href="#" class="hover:text-brand">Careers</a></li>
+                        <li><a href="#" class="hover:text-brand">Business Partnership</a></li>
+                        <li><a href="#" class="hover:text-brand">Become a Health Partner</a></li>
+                    </ul>
+                </div>
+                <!-- Our Services -->
+                <div>
+                    <h4 class="font-bold text-gray-800 mb-4">Our Services</h4>
+                    <ul class="space-y-3 text-sm text-gray-600">
+                        <li><a href="#" class="hover:text-brand">Order Medicines</a></li>
+                        <li><a href="#" class="hover:text-brand">Book Lab Tests</a></li>
+                        <li><a href="#" class="hover:text-brand">Consult a Doctor</a></li>
+                        <li><a href="#" class="hover:text-brand">Ayurveda Articles</a></li>
+                        <li><a href="#" class="hover:text-brand">Care Plan</a></li>
+                    </ul>
+                </div>
+                <!-- Featured Categories -->
+                <div>
+                    <h4 class="font-bold text-gray-800 mb-4">Featured Categories</h4>
+                    <ul class="space-y-3 text-sm text-gray-600">
+                        <li><a href="#" class="hover:text-brand">Top Products</a></li>
+                        <li><a href="#" class="hover:text-brand">Personal Care</a></li>
+                        <li><a href="#" class="hover:text-brand">Healthcare Devices</a></li>
+                        <li><a href="#" class="hover:text-brand">Health Food and Drinks</a></li>
+                        <li><a href="#" class="hover:text-brand">Sexual Wellness</a></li>
+                        <li><a href="#" class="hover:text-brand">Skin Care</a></li>
+                    </ul>
+                </div>
+                <!-- Follow Us -->
+                <div>
+                    <h4 class="font-bold text-gray-800 mb-4">Follow us on</h4>
+                    <div class="flex space-x-4 text-gray-600 text-2xl">
+                        <a href="#" class="hover:text-brand"><i class="fab fa-facebook-square"></i></a>
+                        <a href="#" class="hover:text-brand"><i class="fab fa-twitter-square"></i></a>
+                        <a href="#" class="hover:text-brand"><i class="fab fa-youtube-square"></i></a>
+                        <a href="#" class="hover:text-brand"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                    <div class="mt-8">
+                        <h4 class="font-bold text-gray-800 mb-2">Download App</h4>
+                        <div class="flex space-x-2">
+                             <a href="#"><img src="https://assets.1mg.com/pwa-application/assets/images/play-store.png" alt="Google Play" class="h-10"></a>
+                            <a href="#"><img src="https://assets.1mg.com/pwa-application/assets/images/app-store.png" alt="App Store" class="h-10"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 mt-4 py-6 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+                <div class="flex items-center gap-6">
+                    <img src="https://onemg.gumlet.io/secure-rebrand_x6f8yq.svg" alt="Secure" class="h-10">
+                    <p class="text-sm text-gray-500">&copy; 2024 Tata 1mg. All rights reserved.</p>
+                </div>
+                <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                    <p class="text-sm text-gray-500">All products displayed on Tata 1mg are procured from verified and licensed pharmacies. All labs listed on the platform are NABL accredited.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Universal Modal for AI responses -->
+    <div id="aiModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg p-8 max-w-lg w-full relative m-4">
+            <button id="closeAiModal" class="absolute top-3 right-4 text-gray-400 hover:text-gray-800 text-3xl font-light">&times;</button>
+            <h2 id="aiModalTitle" class="text-2xl font-bold mb-4 text-center">✨ AI Response</h2>
+            <div id="aiModalContent" class="text-gray-700"></div>
+        </div>
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Gemini API Call Logic ---
+            const API_KEY = ""; // Kept empty as per instructions
+            const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${API_KEY}`;
+            
+            async function callGeminiAPI(prompt, buttonElement) {
+                const originalButtonText = buttonElement.innerHTML;
+                buttonElement.disabled = true;
+                buttonElement.innerHTML = `<span class="loader" style="width: 20px; height: 20px; border-width: 2px;"></span>`;
+
+                let chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
+                const payload = { contents: chatHistory };
+
+                try {
+                    // Exponential backoff
+                    let response;
+                    let delay = 1000;
+                    for (let i = 0; i < 5; i++) {
+                        response = await fetch(API_URL, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(payload)
+                        });
+                        if (response.ok) break;
+                        await new Promise(resolve => setTimeout(resolve, delay));
+                        delay *= 2;
+                    }
+
+                    if (!response.ok) {
+                        throw new Error(`API request failed with status ${response.status}`);
+                    }
+
+                    const result = await response.json();
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        return result.candidates[0].content.parts[0].text;
+                    } else {
+                        console.error("Unexpected API response structure:", result);
+                        return "Sorry, I couldn't get a valid response. Please try again.";
+                    }
+                } catch (error) {
+                    console.error("Error calling Gemini API:", error);
+                    return "An error occurred while contacting the AI assistant. Please check your connection and try again.";
+                } finally {
+                    buttonElement.disabled = false;
+                    buttonElement.innerHTML = originalButtonText;
+                }
+            }
+
+            // --- Simple Markdown to HTML Converter ---
+            function markdownToHtml(text) {
+                return text
+                    .replace(/^### (.*$)/gim, '<h3>$1</h3>') // H3
+                    .replace(/^## (.*$)/gim, '<h2>$1</h2>')   // H2
+                    .replace(/^# (.*$)/gim, '<h1>$1</h1>')    // H1
+                    .replace(/\*\*(.*)\*\*/gim, '<strong>$1</strong>') // Bold
+                    .replace(/\*(.*)\*/gim, '<em>$1</em>')     // Italic
+                    .replace(/^- (.*$)/gim, '<li>$1</li>')     // List items
+                    .replace(/(\<li\>.*\<\/li\>)/gim, '<ul>$1</ul>') // Wrap lists
+                    .replace(/\n/g, '<br>'); // Newlines
+            }
+
+
+            // --- AI Health Assistant Logic ---
+            const symptomsInput = document.getElementById('symptoms-input');
+            const analyzeBtn = document.getElementById('analyze-symptoms-btn');
+            const responseArea = document.getElementById('ai-response-area');
+            const responseLoader = document.getElementById('ai-response-loader');
+            const responseContent = document.getElementById('ai-response-content');
+
+            analyzeBtn.addEventListener('click', async () => {
+                const symptoms = symptomsInput.value.trim();
+                if (!symptoms) {
+                    responseArea.classList.remove('hidden');
+                    responseLoader.classList.add('hidden');
+                    responseContent.innerHTML = `<p class="text-red-500 text-center">Please enter your symptoms first.</p>`;
+                    return;
+                }
+
+                responseArea.classList.remove('hidden');
+                responseLoader.classList.remove('hidden');
+                responseContent.classList.add('hidden');
+                responseContent.innerHTML = '';
+
+                const prompt = `You are a helpful medical AI assistant for a platform like Tata 1mg. A user has provided the following symptoms: "${symptoms}".
+                
+                Based *only* on these symptoms, provide a structured response using Markdown with the following sections:
+                ### Possible Related Health Concerns
+                ### Suggested Lab Tests
+                ### Recommended Specialist to Consult
+                
+                For each section, provide a brief, easy-to-understand list.
+                
+                IMPORTANT: Start your entire response with the following disclaimer in bold:
+                **Disclaimer: I am an AI assistant. This information is not a medical diagnosis. Please consult a qualified healthcare professional for any health concerns.**`;
+
+                const resultText = await callGeminiAPI(prompt, analyzeBtn);
+                const formattedHtml = markdownToHtml(resultText);
+
+                responseContent.innerHTML = formattedHtml;
+                responseLoader.classList.add('hidden');
+                responseContent.classList.remove('hidden');
+            });
+
+            // --- Article Summarizer Logic ---
+            const summarizeBtns = document.querySelectorAll('.summarize-article-btn');
+            const aiModal = document.getElementById('aiModal');
+            const aiModalTitle = document.getElementById('aiModalTitle');
+            const aiModalContent = document.getElementById('aiModalContent');
+            const closeAiModalBtn = document.getElementById('closeAiModal');
+
+            const showAiModal = (title, content) => {
+                aiModalTitle.innerText = title;
+                aiModalContent.innerHTML = content;
+                aiModal.classList.remove('hidden');
+            };
+
+            const hideAiModal = () => {
+                aiModal.classList.add('hidden');
+            };
+
+            summarizeBtns.forEach(btn => {
+                btn.addEventListener('click', async (e) => {
+                    const card = e.target.closest('.group');
+                    const articleTitle = card.querySelector('h4').innerText;
+                    const articleContent = card.querySelector('p:last-of-type').innerText;
+                    
+                    showAiModal(`✨ AI Summary: ${articleTitle}`, `<div class="flex justify-center items-center p-4"><div class="loader"></div></div>`);
+
+                    const prompt = `Summarize the key points of the following health article in 2-3 simple, easy-to-understand sentences. Focus on the main takeaway for a general audience.
+                    
+                    Article Title: "${articleTitle}"
+                    Article Snippet: "${articleContent}"`;
+                    
+                    const summaryText = await callGeminiAPI(prompt, btn);
+                    aiModalContent.innerHTML = `<p>${summaryText}</p>`;
+                });
+            });
+
+            closeAiModalBtn.addEventListener('click', hideAiModal);
+            aiModal.addEventListener('click', e => {
+                if(e.target === aiModal) hideAiModal();
+            });
+
+
+            // --- Original Login Modal Logic ---
+            const loginBtn = document.getElementById('loginBtn');
+            const loginModal = document.getElementById('loginModal'); // This is the original login modal, which is not used in the provided HTML. Assuming it might be added later.
+            const closeModal = document.getElementById('closeModal'); // Same as above.
+
+            if(loginBtn && loginModal && closeModal){
+                 const showLoginModal = (e) => {
+                    e.preventDefault();
+                    loginModal.classList.remove('hidden');
+                };
+
+                const hideLoginModal = () => {
+                    loginModal.classList.add('hidden');
+                };
+
+                loginBtn.addEventListener('click', showLoginModal);
+                closeModal.addEventListener('click', hideLoginModal);
+                
+                loginModal.addEventListener('click', (e) => {
+                    if (e.target === loginModal) hideLoginModal();
+                });
+            }
+
+            // Hide any modal on 'Escape' key press
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    if(!aiModal.classList.contains('hidden')) hideAiModal();
+                    if(loginModal && !loginModal.classList.contains('hidden')) hideLoginModal();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
